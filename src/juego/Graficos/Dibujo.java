@@ -16,18 +16,17 @@
  */
 package juego.Graficos;
 
-import java.awt.image.BufferedImage;
-import javax.swing.ImageIcon;
-import javax.swing.JPanel;
+import javax.swing.JFrame;
 
 
 /**
  *
  * @author Kevin Andres Forero Guaitero <https://github.com/kevinandresforero>
  */
-public class Dibujo extends JPanel{
+public class Dibujo extends JFrame{
 
-    public Dibujo() {
+    public Dibujo(){
+
         
     }
 

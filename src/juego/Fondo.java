@@ -25,39 +25,16 @@ import javax.swing.ImageIcon;
 public final class Fondo {
     String ruta;
     Image imagen ;
-    //Variables de tamaño del fondo
-    int ancho_fondo = 1300;
-    int alto_fondo = 400;
-    //Coordenadas iniciales para mover el fondo
-    int x1=1300;
-    int y1=0;
-    //Coordenadas secundariasque mueven otro fondo
-    int x2 = 0;
-    int y2 = 0;
     
     public Fondo(String ruta){
         this.ruta = ruta;
         imagen = new ImageIcon(getClass().getResource(this.ruta)).getImage();
-        System.out.println("Fondo(String ruta)");
+        System.out.println("Fondo("+this.ruta+")");
         
     }
-
-    void mover() {
-        x1 = x1 - 2;
-        x2 = x2 - 2;
-            
-        if (x1==0 & x2==-1300 )
-            {   
-                x1=1300;
-                x2 = 0;
-            }
-    }
-
-    void paint(String ruta) {
-        this.ruta = ruta;
-        this.imagen = new ImageIcon(getClass().getResource(this.ruta)).getImage();
-        System.out.println("carga exitosa");
-    }
     
+    public Image getImage(){
+        return imagen ;
+    }
 }
 

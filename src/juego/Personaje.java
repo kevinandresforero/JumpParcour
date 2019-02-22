@@ -16,9 +16,8 @@
  */
 package juego;
 
-import java.awt.Graphics2D;
+import java.awt.Image;
 import java.awt.event.KeyEvent;
-import javax.swing.ImageIcon;
 
 /**
  *
@@ -26,21 +25,27 @@ import javax.swing.ImageIcon;
  */
 public class Personaje {
 
-    private final Juego Juego;
-    private boolean saltando = false;
-    int ancho = 50;
-    int alto = 50;
-    int x = 10;
-    int y = 350;
-    int x1 = 0;
-    int y1=0;
+    int dx;
+    int dy;
+    int x;
+    int y;
+    String UbicacionImagen;
+    Image Imagen;
+    boolean saltando = false ;
+    int numeroVidas = 3;
 
-    public Personaje(Juego aThis) {
-        this.Juego = aThis;
-    }
+    public void mover(){
+        if (dx > 0 && x <= 1250) {
+            x += dx;
+        } else if (dx < 0 && x >= 10) {
+            x += dx;
+        }
 
-    void mover() {
-        
+        if (dy > 0 && y <= 780) {
+            y += dy;
+        } else if (dy < 0 && y >= 10) {
+            y += dy;
+        }
     }
 
     void keyPressed(KeyEvent ke) {
@@ -49,16 +54,17 @@ public class Personaje {
             saltando=true;
         }
     }
-
-    void paint(Graphics2D g) {
-       ImageIcon imagenFondo = new ImageIcon(getClass().getResource("/juego/Graficos/Recursos/Personaje/k3.png"));
-       g.drawImage(imagenFondo.getImage(), 250, 250,150,150,null);
-       
+    
+    public int getX() {
+        return x;
     }
     
+    public int getY() {
+        return y;
+    }
     
-	public ImageIcon getBounds() {
-		return new ImageIcon();
-	}
+    public Image getImagen() {
+        return Imagen;
+    }
     
 }

@@ -16,8 +16,13 @@
  */
 package juego;
 
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import java.awt.Graphics;
+import java.awt.Image;
+import java.io.File;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.imageio.ImageIO;
 import javax.swing.JPanel;
 
 /**
@@ -25,20 +30,29 @@ import javax.swing.JPanel;
  * @author Kevin Andres Forero Guaitero <https://github.com/kevinandresforero/JumpParcour>
  */
 
-    public class Juego extends JPanel implements ActionListener{
-        
-        private final georges Georges;
-        private final pared pared;
-        private final Fondo fondoJuego;
+    public class Juego extends JPanel {
+
+        private Fondo fondoJuego ;
+        private Image juego ; 
+        private String ruta = "/src/juego/Graficos/Recursos/Fondo/4Fondo.png";
+        private File rutaf = new File(ruta);
         
         public Juego(){
-             setFocusable(true);
+
+        
         }
-    
-    @Override
-    public void actionPerformed(ActionEvent ae) {
         
-    }
+        @Override
+        protected void paintComponent(Graphics g){
+            super.paintComponent(g);
+            File f = new File(ruta) ;
+            try {
+                juego = ImageIO.read(f) ;
+            } catch (IOException ex) {
+                System.out.println("No se pudo cargar la imagen de la ruta: "+ruta);
+            }
+            
+        }
         
-      
-}
+ }
+        

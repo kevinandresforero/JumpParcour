@@ -24,23 +24,24 @@ import juego.Juego;
  * @author Kevin Andres Forero Guaitero <https://github.com/kevinandresforero>
  */
 public class Ventana extends JFrame {
-    int ancho = 1300 , alto = 425 ;
-    
-    private static Thread thread;
+    private final int ancho = 1300;
+    private final int alto = 425;
+
     public Ventana(){
         
         /*
           *   Se crea y setea la ventana Principal
         */
         JFrame ventana = new JFrame("Jueguito");
+        ventana.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         ventana.setTitle("Jump Parcours");
+        ventana.add(new Juego());
         ventana.setSize(ancho, alto);
         ventana.setResizable(false);
         ventana.setVisible(true);
         ventana.setCursor(1);
-        ventana.add(new Juego());
         ventana.setLocationRelativeTo(null);
-        ventana.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        
         
         System.out.println("Ventana()");
         

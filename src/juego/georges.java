@@ -34,11 +34,17 @@ class georges extends Personaje{
         new ImageIcon(getClass().getResource("../juego/Graficos/Recursos/Personaje/k6.png")).getImage(),
         new ImageIcon(getClass().getResource("../juego/Graficos/Recursos/Personaje/k7.png")).getImage(),
         new ImageIcon(getClass().getResource("../juego/Graficos/Recursos/Personaje/k8.png")).getImage(),
+    };
+    
+    Image[] salto ={
+        new ImageIcon(getClass().getResource("../juego/Graficos/Recursos/Personaje/k1.png")).getImage()
+    };
+    
+    public georges(){   
+        numeroVidas = 3;
+        x = 40;
+        y = 60;
     }
     
-    
-    public georges(){
-        
-    }
     
 }
