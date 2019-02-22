@@ -20,8 +20,6 @@ import java.awt.Graphics;
 import java.awt.Image;
 import java.io.File;
 import java.io.IOException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.imageio.ImageIO;
 import javax.swing.JPanel;
 
@@ -34,8 +32,7 @@ import javax.swing.JPanel;
 
         private Fondo fondoJuego ;
         private Image juego ; 
-        private String ruta = "/src/juego/Graficos/Recursos/Fondo/4Fondo.png";
-        private File rutaf = new File(ruta);
+        private final String ruta = "/Graficos/Recursos/Fondo/4Fondo.png";
         
         public Juego(){
 
@@ -45,14 +42,16 @@ import javax.swing.JPanel;
         @Override
         protected void paintComponent(Graphics g){
             super.paintComponent(g);
+            
             File f = new File(ruta) ;
             try {
                 juego = ImageIO.read(f) ;
+                System.out.println("Se cargo correctamente la imagen de la ruta: "+ruta);
             } catch (IOException ex) {
                 System.out.println("No se pudo cargar la imagen de la ruta: "+ruta);
             }
             
         }
-        
+         
  }
         
