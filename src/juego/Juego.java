@@ -17,7 +17,9 @@
 package juego;
 
 import java.awt.Graphics;
+import java.awt.Graphics2D;
 import java.awt.Image;
+import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import javax.imageio.ImageIO;
@@ -30,27 +32,30 @@ import javax.swing.JPanel;
 
     public class Juego extends JPanel {
 
-        private Fondo fondoJuego ;
-        private Image juego ; 
-        private final String ruta = "/Graficos/Recursos/Fondo/4Fondo.png";
+        private Image FondoJuego;
+        private final Fondo luz;
+        private final Fondo efecto;
+        private final Fondo contruccion;
+        private final Fondo ciudad;
         
         public Juego(){
-
-        
+            luz = new Fondo("/run/media/kebuun/Datos/Documents/U/2º/POO/ProyectoFinal/Juego/src/juego/Graficos/Recursos/Fondo/1Fondo.png");
+            efecto = new Fondo("/run/media/kebuun/Datos/Documents/U/2º/POO/ProyectoFinal/Juego/src/juego/Graficos/Recursos/Fondo/2Fondo.png");
+            contruccion = new Fondo("/run/media/kebuun/Datos/Documents/U/2º/POO/ProyectoFinal/Juego/src/juego/Graficos/Recursos/Fondo/2Fondo.png");
+            ciudad = new Fondo("/run/media/kebuun/Datos/Documents/U/2º/POO/ProyectoFinal/Juego/src/juego/Graficos/Recursos/Fondo/1Fondo.png");
         }
+        
+        
         
         @Override
         protected void paintComponent(Graphics g){
+            
             super.paintComponent(g);
+            Image escena = luz.getImage();            
+            Graphics2D g2d = (Graphics2D) g;
             
-            File f = new File(ruta) ;
-            try {
-                juego = ImageIO.read(f) ;
-                System.out.println("Se cargo correctamente la imagen de la ruta: "+ruta);
-            } catch (IOException ex) {
-                System.out.println("No se pudo cargar la imagen de la ruta: "+ruta);
-            }
-            
+            g2d.drawImage(escena, 0, 0, null);
+
         }
          
  }

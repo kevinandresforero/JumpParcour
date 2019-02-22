@@ -24,8 +24,8 @@ import juego.Juego;
  * @author Kevin Andres Forero Guaitero <https://github.com/kevinandresforero>
  */
 public class Ventana extends JFrame {
-    private final int ancho = 1300;
-    private final int alto = 425;
+    private final int ancho = 1080;
+    private final int alto = 720;
 
     public Ventana(){
         
@@ -35,6 +35,7 @@ public class Ventana extends JFrame {
         JFrame ventana = new JFrame("Jueguito");
         ventana.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         ventana.setTitle("Jump Parcours");
+        System.out.println("Ventana()");
         ventana.add(new Juego());
         ventana.setSize(ancho, alto);
         ventana.setResizable(false);
@@ -42,8 +43,6 @@ public class Ventana extends JFrame {
         ventana.setCursor(1);
         ventana.setLocationRelativeTo(null);
         
-        
-        System.out.println("Ventana()");
         
         
     }
