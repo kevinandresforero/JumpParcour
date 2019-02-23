@@ -29,8 +29,8 @@ public class Ventana extends JFrame {
     
     Toolkit miPantalla = Toolkit.getDefaultToolkit();
     Dimension tamañomantalla = miPantalla.getScreenSize();
-    private final int alto = (int) tamañomantalla.getHeight();
-    private final int ancho = (int) tamañomantalla.getWidth();
+    private final int alto = (int) ((int) tamañomantalla.getHeight()/1.4);
+    private final int ancho = (int) ((int) tamañomantalla.getWidth()/1.01);
 
     public Ventana(){
         
@@ -48,14 +48,6 @@ public class Ventana extends JFrame {
         ventana.setCursor(1);
         ventana.setLocationRelativeTo(null);
         
-    }
-    
-    public int getAncho(){
-        return ancho;
-    }
-    
-    public int getAlto(){
-        return alto;
     }
     
 }
