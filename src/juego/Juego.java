@@ -19,10 +19,6 @@ package juego;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Image;
-import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.IOException;
-import javax.imageio.ImageIO;
 import javax.swing.JPanel;
 
 /**
@@ -41,8 +37,9 @@ import javax.swing.JPanel;
         public Juego(){
             luz = new Fondo("/run/media/kebuun/Datos/Documents/U/2º/POO/ProyectoFinal/Juego/src/juego/Graficos/Recursos/Fondo/1Fondo.png");
             efecto = new Fondo("/run/media/kebuun/Datos/Documents/U/2º/POO/ProyectoFinal/Juego/src/juego/Graficos/Recursos/Fondo/2Fondo.png");
-            contruccion = new Fondo("/run/media/kebuun/Datos/Documents/U/2º/POO/ProyectoFinal/Juego/src/juego/Graficos/Recursos/Fondo/2Fondo.png");
-            ciudad = new Fondo("/run/media/kebuun/Datos/Documents/U/2º/POO/ProyectoFinal/Juego/src/juego/Graficos/Recursos/Fondo/1Fondo.png");
+            contruccion = new Fondo("/run/media/kebuun/Datos/Documents/U/2º/POO/ProyectoFinal/Juego/src/juego/Graficos/Recursos/Fondo/3Fondo.png");
+            ciudad = new Fondo("/run/media/kebuun/Datos/Documents/U/2º/POO/ProyectoFinal/Juego/src/juego/Graficos/Recursos/Fondo/4Fondo.png");
+
         }
         
         
@@ -50,13 +47,25 @@ import javax.swing.JPanel;
         @Override
         protected void paintComponent(Graphics g){
             
-            super.paintComponent(g);
+            super.paintComponent(g);          
             Image escena = luz.getImage();            
             Graphics2D g2d = (Graphics2D) g;
+/*          ImageIcon imagenFondo =new ImageIcon(getClass().getResource("/Imagenes/1Fondo.png"));
+            ImageIcon imagenFondo2 =new ImageIcon(getClass().getResource("/Imagenes/2Fondo.png"));
+            ImageIcon imagenFondo3 =new ImageIcon(getClass().getResource("/Imagenes/3Fondo.png"));
+            ImageIcon imagenFondo4 =new ImageIcon(getClass().getResource("/Imagenes/4Fondo.png"));
+*/
+            g.drawImage(escena, 0, 0, null);
+            g.drawImage(efecto.getImage(), 0, 0, null);
+            g.drawImage(contruccion.getImage(), 0, 0, null);
+            g.drawImage(ciudad.getImage(), 0, 0, null);
             
-            g2d.drawImage(escena, 0, 0, null);
-
+            Juego.super.setVisible(true);
         }
+
+    private void actulaizar() {
+        
+    }
          
  }
         

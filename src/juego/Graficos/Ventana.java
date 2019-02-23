@@ -16,6 +16,8 @@
  */
 package juego.Graficos;
 
+import java.awt.Dimension;
+import java.awt.Toolkit;
 import javax.swing.JFrame;
 import juego.Juego;
 
@@ -24,8 +26,11 @@ import juego.Juego;
  * @author Kevin Andres Forero Guaitero <https://github.com/kevinandresforero>
  */
 public class Ventana extends JFrame {
-    private final int ancho = 1080;
-    private final int alto = 720;
+    
+    Toolkit miPantalla = Toolkit.getDefaultToolkit();
+    Dimension tamañomantalla = miPantalla.getScreenSize();
+    private final int alto = (int) tamañomantalla.getHeight();
+    private final int ancho = (int) tamañomantalla.getWidth();
 
     public Ventana(){
         
@@ -35,7 +40,7 @@ public class Ventana extends JFrame {
         JFrame ventana = new JFrame("Jueguito");
         ventana.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         ventana.setTitle("Jump Parcours");
-        System.out.println("Ventana()");
+        System.out.println("Ventana() de : "+ancho+" * "+alto);
         ventana.add(new Juego());
         ventana.setSize(ancho, alto);
         ventana.setResizable(false);
@@ -43,8 +48,14 @@ public class Ventana extends JFrame {
         ventana.setCursor(1);
         ventana.setLocationRelativeTo(null);
         
-        
-        
+    }
+    
+    public int getAncho(){
+        return ancho;
+    }
+    
+    public int getAlto(){
+        return alto;
     }
     
 }

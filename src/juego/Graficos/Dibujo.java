@@ -16,6 +16,8 @@
  */
 package juego.Graficos;
 
+import java.awt.Image;
+import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 
 
@@ -25,9 +27,34 @@ import javax.swing.JFrame;
  */
 public class Dibujo extends JFrame{
 
-    public Dibujo(){
-
-        
+    int posx, posy;
+    Image imagen;
+    String UbicacionImagen;
+     
+    public Dibujo(String UbicacionImagen,int pox, int posy){
+        this.posx = posx;
+        this.posy = posy;
+        this.UbicacionImagen = UbicacionImagen;
+        ImageIcon ImageIcon = new ImageIcon(this.getClass().getResource(this.UbicacionImagen));
+        this.imagen = ImageIcon.getImage();
+    }
+    
+    public Image getImage(){
+        return imagen;
+    }
+    
+    public int getposx(){
+        return posx;
     }
 
+    public int getposy(){
+        return posy;
+    }    
+    
+    public void setImage(String Ubicacion){
+        this.UbicacionImagen = Ubicacion;
+        ImageIcon img = new ImageIcon(this.getClass().getResource(Ubicacion));
+        this.imagen = img.getImage();
+    }
+    
 }

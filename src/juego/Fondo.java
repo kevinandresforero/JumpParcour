@@ -15,10 +15,9 @@
  */
 package juego;
 
-import java.awt.Graphics2D;
 import java.awt.Image;
 import java.io.File;
-import javax.swing.ImageIcon;
+import juego.Graficos.Ventana;
 
 /**
  *
@@ -26,11 +25,9 @@ import javax.swing.ImageIcon;
  */
 public final class Fondo {
     Image imagen ;
-    
+     
     public Fondo(String ruta){
         File f = new File(ruta) ;
-        
-        
         System.out.println("Se cargo dorrectamente el fondo de la ruta"+ruta);
         
     }
@@ -39,16 +36,9 @@ public final class Fondo {
         return imagen ;
     }
     
-    	public void paint(Graphics2D g) {
-            ImageIcon imagenFondo =new ImageIcon(getClass().getResource("/Imagenes/1Fondo.png"));
-            ImageIcon imagenFondo2 =new ImageIcon(getClass().getResource("/Imagenes/2Fondo.png"));
-            ImageIcon imagenFondo3 =new ImageIcon(getClass().getResource("/Imagenes/3Fondo.png"));
-            ImageIcon imagenFondo4 =new ImageIcon(getClass().getResource("/Imagenes/4Fondo.png"));
-            g.drawImage(imagenFondo.getImage(), 0, 0, null);
-            g.drawImage(imagenFondo2.getImage(), 0, 0, null);
-            g.drawImage(imagenFondo3.getImage(), 0, 0, null);
-            g.drawImage(imagenFondo4.getImage(), 0, 0, null);
-        }
+    public void dibujar(){
+        getImage();
+            }
     
 }
 
