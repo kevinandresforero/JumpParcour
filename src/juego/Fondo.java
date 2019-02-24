@@ -41,16 +41,13 @@ public final class Fondo {
         return imagen ;
     }
     
-	public void paint(Graphics2D g) {
-            ImageIcon imagenFondo =new ImageIcon(getClass().getResource("/Imagenes/1Fondo.png"));
-            ImageIcon imagenFondo2 =new ImageIcon(getClass().getResource("/Imagenes/2Fondo.png"));
-            ImageIcon imagenFondo3 =new ImageIcon(getClass().getResource("/Imagenes/3Fondo.png"));
-            ImageIcon imagenFondo4 =new ImageIcon(getClass().getResource("/Imagenes/4Fondo.png"));
-            g.drawImage(imagenFondo.getImage(), x1, y1, ancho,alto,null);
-            g.drawImage(imagenFondo2.getImage(), x1, y1,ancho,alto,null);
-            g.drawImage(imagenFondo3.getImage(), x1, y1,ancho,alto,null);
-            g.drawImage(imagenFondo4.getImage(), x1, y1,ancho,alto,null);
-        }
+    public int getAltura(){
+        return alto;
+    }
+
+    public int getAnchura(){
+        return ancho;
+    }
     
 }
 

@@ -17,7 +17,6 @@
 package juego;
 
 import java.awt.Graphics;
-import java.awt.Graphics2D;
 import java.awt.Image;
 import javax.swing.JPanel;
 
@@ -45,14 +44,17 @@ import javax.swing.JPanel;
         
         @Override
         protected void paintComponent(Graphics g){
-            
             super.paintComponent(g);
-            Graphics2D g2d = (Graphics2D) g;
-/*          ImageIcon imagenFondo =new ImageIcon(getClass().getResource("/Imagenes/1Fondo.png"));
+/*          Graphics2D g2d = (Graphics2D) g;
+            ImageIcon imagenFondo =new ImageIcon(getClass().getResource("/Imagenes/1Fondo.png"));
             ImageIcon imagenFondo2 =new ImageIcon(getClass().getResource("/Imagenes/2Fondo.png"));
             ImageIcon imagenFondo3 =new ImageIcon(getClass().getResource("/Imagenes/3Fondo.png"));
             ImageIcon imagenFondo4 =new ImageIcon(getClass().getResource("/Imagenes/4Fondo.png"));
 */
+            g.drawOval(100, 100, 100, 100);
+            g.drawString("sirva catrehijueputa malparido", 1352-1300, 548-500);
+            g.drawImage(luz.getImage(), 100, 100, this);
+            g.drawImage(efecto.getImage(), 0, 0, this);
         }
 
     private void actulaizar() {

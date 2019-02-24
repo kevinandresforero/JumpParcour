@@ -17,6 +17,7 @@
 package juego.Graficos;
 
 import java.awt.Dimension;
+import java.awt.Image;
 import java.awt.Toolkit;
 import javax.swing.JFrame;
 import juego.Juego;
@@ -39,10 +40,12 @@ public class Ventana extends JFrame {
         */
         JFrame ventana = new JFrame("Jueguito");
         ventana.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        ventana.setSize(ancho, alto);
         ventana.setTitle("Jump Parcours");
         System.out.println("Ventana() de : "+ancho+" * "+alto);
+        Image icono = miPantalla.getImage("Graficos/Recursos/icono.gif");
+        ventana.setIconImage(null);
         ventana.add(new Juego());
-        ventana.setSize(ancho, alto);
         ventana.setResizable(false);
         ventana.setVisible(true);
         ventana.setCursor(1);
